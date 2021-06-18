@@ -1,0 +1,17 @@
+RewriteEngine On 
+# Add Any Path Your want for Auto Including Path 
+php_value include_path '../' 
+DirectoryIndex index.html index.php 
+Options -Indexes 
+#### [Custom Route] course Routes for CourseController ### 
+
+ 
+RewriteRule ^(course)/([a-zA-Z0-9\-]+)/([a-zA-Z0-9\-/]+)$ CourseController.php?_method=$2&_values=$3 [L,QSA] 
+RewriteRule ^(course)/([a-zA-Z0-9\-]+)$ CourseController.php?_method=$2 [L,QSA] 
+RewriteRule ^(course)$ CourseController.php [L,QSA] 
+#### [Custom Route] library Routes for LibraryController ### 
+
+ 
+RewriteRule ^(library)/([a-zA-Z0-9\-]+)/([a-zA-Z0-9\-/]+)$ LibraryController.php?_method=$2&_values=$3 [L,QSA] 
+RewriteRule ^(library)/([a-zA-Z0-9\-]+)$ LibraryController.php?_method=$2 [L,QSA] 
+RewriteRule ^(library)$ LibraryController.php [L,QSA] 
